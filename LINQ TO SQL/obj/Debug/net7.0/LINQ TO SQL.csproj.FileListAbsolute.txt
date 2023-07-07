@@ -1,0 +1,5 @@
+D:\c#\programs\LINQ TO SQL\LINQ TO SQL\obj\Debug\net7.0\LINQ TO SQL.csproj.AssemblyReference.cache
+D:\c#\programs\LINQ TO SQL\LINQ TO SQL\obj\Debug\net7.0\LINQ TO SQL.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\programs\LINQ TO SQL\LINQ TO SQL\obj\Debug\net7.0\LINQ TO SQL.AssemblyInfoInputs.cache
+D:\c#\programs\LINQ TO SQL\LINQ TO SQL\obj\Debug\net7.0\LINQ TO SQL.AssemblyInfo.cs
+D:\c#\programs\LINQ TO SQL\LINQ TO SQL\obj\Debug\net7.0\LINQ TO SQL.csproj.CoreCompileInputs.cache

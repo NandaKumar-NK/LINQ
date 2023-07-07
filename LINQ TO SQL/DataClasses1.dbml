@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Train_TicketBooking" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Train_details" Member="Train_details">
+    <Type Name="Train_detail">
+      <Column Name="train_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="train_name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Sources" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Distination" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Train_detail_Seat" Member="Seats" ThisKey="train_id" OtherKey="train_id" Type="Seat" />
+      <Association Name="Train_detail_booking_deatil" Member="booking_deatils" ThisKey="train_id" OtherKey="train_id" Type="booking_deatil" />
+    </Type>
+  </Table>
+  <Table Name="dbo.passanger_details" Member="passanger_details">
+    <Type Name="passanger_detail">
+      <Column Name="pass_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="passanger_name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="mobile_no" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="passanger_detail_booking_deatil" Member="booking_deatils" ThisKey="pass_id" OtherKey="pass_id" Type="booking_deatil" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seats" Member="Seats">
+    <Type Name="Seat">
+      <Column Name="train_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Compartment_type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Compartment_count" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Total_SeatCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Train_detail_Seat" Member="Train_detail" ThisKey="train_id" OtherKey="train_id" Type="Train_detail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.booking_deatils" Member="booking_deatils">
+    <Type Name="booking_deatil">
+      <Column Name="Ticket_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="train_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="compartment_type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="pass_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T_date" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="seat_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Train_detail_booking_deatil" Member="Train_detail" ThisKey="train_id" OtherKey="train_id" Type="Train_detail" IsForeignKey="true" />
+      <Association Name="passanger_detail_booking_deatil" Member="passanger_detail" ThisKey="pass_id" OtherKey="pass_id" Type="passanger_detail" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
